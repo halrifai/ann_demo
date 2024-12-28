@@ -1,0 +1,67 @@
+<mat-card class="account-card">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon class="account-icon">account_circle</mat-icon>
+      My Account
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="user-info">
+      <div class="info-item">
+        <mat-icon>person</mat-icon>
+        <div class="info-content">
+          <span class="label">Username</span>
+          <span class="value">{{ username || "Not available" }}</span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="info-item">
+        <mat-icon>email</mat-icon>
+        <div class="info-content">
+          <span class="label">Email</span>
+          <span class="value">{{ email || "Not available" }}</span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="info-item">
+        <mat-icon>fingerprint</mat-icon>
+        <div class="info-content">
+          <span class="label">User ID</span>
+          <span class="value">{{ userId || "Not available" }}</span>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      mat-button
+      color="primary"
+      (click)="fetchProfile()"
+      [disabled]="isLoading"
+    >
+      <mat-icon>sync</mat-icon>
+      {{ isLoading ? "Fetching Profile..." : "Fetch Profile" }}
+    </button>
+
+    <button mat-button color="primary" (click)="refreshToken()">
+      <mat-icon>refresh</mat-icon>
+      Refresh Token
+    </button>
+
+    <button mat-button color="warn" (click)="logout()" [disabled]="isLoading">
+      <mat-icon>exit_to_app</mat-icon>
+      {{ isLoading ? "Logging out..." : "Logout" }}
+    </button>
+
+    <button mat-button color="primary" (click)="router.navigate(['/'])">
+      <mat-icon>shopping_cart</mat-icon>
+      Go to the Webshop!
+    </button>
+  </mat-card-actions>
+</mat-card>

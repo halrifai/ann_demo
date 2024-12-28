@@ -1,0 +1,62 @@
+.account-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+  mat-card-header {
+    margin-bottom: 1.5rem;
+
+    .account-icon {
+      font-size: 2rem;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.user-info {
+  .info-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+
+    mat-icon {
+      margin-right: 1rem;
+      color: #666;
+    }
+
+    .info-content {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        font-size: 0.875rem;
+        color: #666;
+        margin-bottom: 0.25rem;
+      }
+
+      .value {
+        font-size: 1rem;
+        color: #333;
+      }
+    }
+  }
+
+  mat-divider {
+    margin: 0.5rem 0;
+  }
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem !important;
+
+  button {
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}
