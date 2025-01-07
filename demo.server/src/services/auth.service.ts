@@ -59,7 +59,7 @@ export class AuthService {
 
     const refreshTokenString = this.createRefreshToken();
     const expiresAt = new Date();
-    expiresAt.setMinutes(expiresAt.getMinutes() + 2);
+    expiresAt.setHours(expiresAt.getHours() + 24);
 
     const refreshToken = new this.tokenModel({
       token: refreshTokenString,
@@ -119,7 +119,7 @@ export class AuthService {
 
     const newRefreshToken = this.createRefreshToken();
     const expiresAt = new Date();
-    expiresAt.setSeconds(expiresAt.getSeconds() + 45);
+    expiresAt.setHours(expiresAt.getHours() + 24);
 
     const newRefreshTokenDoc = new this.tokenModel({
       token: newRefreshToken,

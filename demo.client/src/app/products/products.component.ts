@@ -91,11 +91,11 @@ export class ProductsComponent implements OnInit {
 
     this.loading = true;
     this.productsService
-      .getProducts(this.currentPage.toString(), "15")
+      .getProducts(this.currentPage.toString(), "6")
       .subscribe({
         next: (response: any) => {
           this.products = [...this.products, ...response.products];
-          this.currentPage += 15;
+          this.currentPage += 6;
           this.loading = false;
         },
         error: (error) => {

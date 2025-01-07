@@ -14,11 +14,14 @@ export class ProductsController {
 
   @UseGuards(JwtAuthGuard)
   @Get()
-  getProducts(@Query('start') start?: string, @Query('count') count?: string) {
-    if (start && isNaN(Number(start))) {
+  getProducts(
+    @Query('start') start: string = '0',
+    @Query('count') count: string = '6',
+  ) {
+    if (isNaN(Number(start))) {
       throw new BadRequestException('Start parameter must be a number');
     }
-    if (count && isNaN(Number(count))) {
+    if (isNaN(Number(count))) {
       throw new BadRequestException('Count parameter must be a number');
     }
 
